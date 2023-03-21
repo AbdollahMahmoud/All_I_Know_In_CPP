@@ -1,0 +1,74 @@
+March The 12th                  Over Flow &             
+    2023                     Type Casting/Conversion                                  
+~~~~~~~~~~~~~~              ~~~~~~~~~~~~~~~~~~~~~~~~~   
+
+A- Over Flow
+   ---------
+    
+    *Fifth Primer:
+        If we assign an out-of-range value to an object of unsigned type, the result is
+        the remainder of the value modulo the number of values the target type can
+        hold. For example, an 8-bit unsigned char can hold values from 0 through
+        255, inclusive. If we assign a value outside this range, the compiler assigns
+        the remainder of that value modulo 256. Therefore, assigning –1 to an 8-bit
+        unsigned char gives that object the value 255. 
+                => -1 % 256 = 255
+    
+    Happens due to exceeding the maximum capacity of the variable.
+    Examples: 
+    (a)
+        unsigned char a = 255; (maximum capacity = 2^bits - 1 = 2^8 -1) 
+        a++;
+        1111 1111
+        +
+        0000 0001
+        ---------
+       10000 0000 ===> The maximum capacity is exceeded, another bit is used but 
+                        won't be read when using the variable as the first 8 bits only      
+                        are read. 
+                        output ===> a = 0
+
+    (b) 
+        unsigned int b = 0b1111 1111 1111 1111 1111 1111 1111 1111; (or b = 2^16 -1 = 65,535)
+        b++;
+         output ===> b = 0
+        b--;
+        b+=2;
+         output ===> b = 1
+    
+    (c) Truncated / Implementation Defined
+        unsigned char a = 0b1111000000001111; => If Truncated, should get the first 8 bits only 00001111 = 15 
+                                              => Could otherwise give a Compilation Error.
+        *Notes on Implementation Defined behaviours: 
+                Programs usually should avoid implementation-defined behavior, such
+                as assuming that the size of an int is a fixed and known value. Such programs are
+                said to be nonportable. When the program is moved to another machine, code that
+                relied on implementation-defined behavior may fail. Tracking down these sorts of
+                problems in previously working programs is, mildly put, unpleasant.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+B- Type Casting
+   ------------
+
+   If you add two sources "variables" of different Data Types, the compiler 
+   performs the addition between the first and an Implicitly Casted, to that type, Temporary Variable.
+   And eventually stores the result in the first's type.
+   Example:
+   -------
+            unsigned int a = 0b11111111111111111111111111111111;
+            long long b = 0;
+            b = a + 1;
+            std::cout<<b;
+                output ==> b = 0
+            What happens, Implicitly, is as follows:
+                unsigned int temp = a + (unsigned int)1 
+                ===> temp = 11111111111111111111111111111111 + 1 = 0
+                Then, temp is Implicitly Casted and is 
+                stored in b ===> b = (long long)temp = (long long)0
+                ===> b = 0
+    So, how do we overcome the Implicit Casting problem?
+        Explicit Casting
+        Example:
+        -------
+        b = (long long)a + 1;

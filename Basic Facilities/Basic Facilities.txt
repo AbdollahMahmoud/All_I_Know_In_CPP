@@ -1,0 +1,65 @@
+                                     
+                                Basic Facilities
+                                ----------------
+Contents:~
+--------
+- Compiler, Linker, Runtime and Logic Errors
+- Preprocessor Directives
+- The Main Function
+- Types and Declarations
+- Pointers, Arrays, and References
+- Structures, Unions, and Enumerations
+- Statements
+- Expressions
+- Select Operations
+- Functions
+- Exception Handling
+- Namespaces
+- Source Files and Programs
+/***************************************************************/
+
+-What are Compiler Errors?
+ ------------------------
+ Syntax Errors like Semi-Colons.
+ Semantic Errors which are things that don't make sense to the Compiler
+ but not in syntax like a+b; or Invalid Conversions or Operands.
+
+-What are Compiler Warnings?
+ ------------------------
+ Like using/printing something uninitialized.
+ Like not using a variable after creating it.
+
+-What are Linker Errors?
+ ----------------------
+ When a Library or an Object File is missing.
+ Example:
+        #include <iostream>        The compiler gives an Object File easily main.o 
+        extern int x;              which has a reference to "x" in it. The Library iostream is
+        int main(void){            included as well. The Linker needs the iostream and the main.o
+        std::cout<<x;              to create an Executable main.exe but it can't find a reference 
+        return 0;                  to "x". So, Linker Error.
+        }
+
+-What are Runtime Errors?
+ -----------------------
+ Like Dividing By Zero, File Not Found, Out of Memory, etc.
+ Exceptions Handling is used as a fix to such problems.
+
+-What are Logic Errors?
+ ---------------------
+ Mistakes that are made by the Developer.
+
+-Preprocessor Directives:
+ -----------------------
+ The program that processes the Code before the Compiler does.
+ It first Strips the code from Comments and replaces each with a space.
+ Then, it looks for Preprocessor Directives, which are the things that begin with the Hashtag "#"
+ The CPP Preprocessor DOES NOT UNDERSTAND CPP, the Compiler does.
+
+-The Main Function:
+ -----------------
+ Starting point of program Execution.
+ Has two versions, both perfectly valid:
+    1- main()
+    2- main(int argc, char* argv[])
+

@@ -1,0 +1,44 @@
+March The 12th                                        Week Number 
+    2023                     Miscelaneous                 Two                   
+~~~~~~~~~~~~~~              ~~~~~~~~~~~~~~            ~~~~~~~~~~~   
+
+
+
+1- An object created from the built-in library <string> is merely an Array
+   like in C Programming.
+
+   Example:
+   -------
+        string s = "Yellow";
+        std::cout<<s[1]; 
+            output ==> e
+
+2- An object created from the built-in library <vector> is also merely an Array
+   with some extra features like: vector<ElementsDataType> VectorName(NumOfElements)
+
+        i- Its elements get initialized automatically with Zeros
+
+       ii- Might initialize the elements manually like this:
+           vector<ElementsDataType> VectorName(NumOfElements, DesiredInitValue)
+
+      iii- Has a Dynamic Size (Elements' Number). Meaning, you can extend/shrink the size 
+           of the Array.
+           Example:
+           -------
+                vector<int> a(10);
+                a.push_back(3);
+                    result ==> an Eleventh Element is added at the End of the array 
+                    with a value of 3.
+       
+       iv- An Empty Vector can be created but Can only Be Initialized using the push_back:
+            vector<int> a;
+            a.push_back(3);
+
+3- Arrays can be Sorted using the function sort(start, end) from 
+   the built-in library <algorithm>
+4- Arrays can also be Reversed using the function reverse(start, end) from 
+   the built-in library <algorithm>
+5- If the input is too big on CodeForces in example you can Copy It And Put It In A Text File
+   and give it to the Compiler: freopen("File.txt", "r", stdin); instead of the cin>>..
+
+6- The text file that he made might be useful.
