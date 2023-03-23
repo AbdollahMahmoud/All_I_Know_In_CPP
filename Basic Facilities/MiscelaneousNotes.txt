@@ -1,6 +1,6 @@
-March The 12th                                        Week Number 
-    2023                     Miscelaneous                 Two                   
-~~~~~~~~~~~~~~              ~~~~~~~~~~~~~~            ~~~~~~~~~~~   
+March The 12th                                        
+    2023                     Miscelaneous                           
+~~~~~~~~~~~~~~              ~~~~~~~~~~~~~~             
 
 
 
@@ -40,5 +40,3 @@ March The 12th                                        Week Number
    the built-in library <algorithm>
 5- If the input is too big on CodeForces in example you can Copy It And Put It In A Text File
    and give it to the Compiler: freopen("File.txt", "r", stdin); instead of the cin>>..
-
-6- The text file that he made might be useful.

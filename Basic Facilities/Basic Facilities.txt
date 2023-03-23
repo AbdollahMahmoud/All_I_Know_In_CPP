@@ -7,6 +7,9 @@ Contents:~
 - Preprocessor Directives
 - The Main Function
 - Types and Declarations
+- Declarator Operators
+- Literals
+- Scope and Lifetime
 - Pointers, Arrays, and References
 - Structures, Unions, and Enumerations
 - Statements
@@ -63,3 +66,30 @@ Contents:~
     1- main()
     2- main(int argc, char* argv[])
 
+/***************************************************************/
+
+-Declarator Operators: /*Bjarne*/
+ --------------------
+
+/***************************************************************/
+
+
+-Literals ?
+ --------
+ /*Integer and Floating-Point Literals ??*/
+ /*Escape Sequences*/
+
+ Character and Character String Literals:
+        A character enclosed within single quotes is a literal of type char. Zero ormore
+        characters enclosed in double quotation marks is a string literal:
+        ’a’ // character literal
+        "Hello World!" // string literal
+        The compiler appends a null character (’\0’) to every string literal. Thus,
+        the actual size of a string literal is one more than its apparent size. For example,
+        the literal ’A’ represents the single character A, whereas the string literal "A" represents
+        an array of two characters, the letter A and the null character.
+
+ /***************************************************************/
+
+-Scope and Lifetime:
+ ------------------

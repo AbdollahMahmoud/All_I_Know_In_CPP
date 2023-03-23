@@ -53,7 +53,8 @@ B- Type Casting
 
    If you add two sources "variables" of different Data Types, the compiler 
    performs the addition between the first and an Implicitly Casted, to that type, Temporary Variable.
-   And eventually stores the result in the first's type.
+   And eventually stores the result in the first's type. UNLESS, one of them is unsigned and the
+   other is signed. In that case, order doesn't matter, the signed is Implicitly Casted into unsigned.
    Example:
    -------
             unsigned int a = 0b11111111111111111111111111111111;
@@ -72,3 +73,23 @@ B- Type Casting
         Example:
         -------
         b = (long long)a + 1;
+
+
+
+    CAUTION: 
+        DON’T MIX SIGNED AND UNSIGNED TYPES..
+        Expressions that mix signed and unsigned values can yield surprising results when
+        the signed value is negative. It is essential to remember that signed values are automatically
+        converted to unsigned. For example, in an expression like a * b, if a is -1
+        and b is 1, then if both a and b are ints, the value is, as expected -1. However, if a is
+        int and b is an unsigned, then the value of this expression depends on how many
+        bits an int has on the particular machine. On our machine, this expression yields
+        4294967295.
+    int a = -1;
+    int b = 1;
+    unsigned c = 1;
+
+    std::cout<<a*b<<std::endl; => -1
+    std::cout<<a*c<<std::endl; => 4294967295
+    std::cout<<c*a<<std::endl; => 4294967295 Order does not matter, signed are Implicitly Casted
+                                             to unsigned data.
